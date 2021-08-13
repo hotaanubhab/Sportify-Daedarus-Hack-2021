@@ -27,14 +27,24 @@ app.use(morgan('dev'));
 //Sandbox routes
 app.get('/add-event',(req,res)=>{
     const event = new Event({
-        name: "Anubhab",
-        lat: 24,
-        lng: 24,
-        minpeeps: 3,
-        activity: "football",
-        description: "digum digum"
+        name: "DJPT",
+        lat: 420,
+        lng: 69,
+        minpeeps: 911,
+        activity: "Shitting",
+        description: "Eeeeeeeeeee"
     });
     event.save()
+        .then((result)=>{
+            res.send(result);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+})
+
+app.get('/all-events', (req, res)=>{
+    Event.find()
         .then((result)=>{
             res.send(result);
         })
@@ -47,8 +57,16 @@ app.get('/',(req,res)=>{
     res.render('index')
 })
 
-app.get('/find',(req,res)=>{
-    res.render('find',{api_key:env.GOOGLE_API_KEY})
+app.get('/find',async (req,res)=>{
+    let events;
+    await Event.find()
+        .then((result)=>{
+            events=result;
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    res.render('find',{api_key:env.GOOGLE_API_KEY,events:events})
 })
 
 app.get('/event',(req,res)=>{

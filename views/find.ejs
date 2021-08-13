@@ -99,7 +99,14 @@
       });
     });
     </script>
-
+      <% events.forEach(function(event){ %>
+        <div class="cards"></div>
+      <h1>Card</h1>
+      Name : <%= event.name %><br>
+      Activity : <%= event.activity %><br>
+      Min People : <%= event.minpeeps %><br>
+      </div>
+      <% }) %>
   </body>
 <!-- <div class="spinner">
 <div class="loading">
