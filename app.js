@@ -5,7 +5,7 @@ require("./environment.js")
 const app = express();
 
 //listening
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 //view engine
 app.set('view engine','ejs')
