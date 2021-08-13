@@ -16,3 +16,7 @@ app.use(morgan('dev'));
 app.get('/',(req,res)=>{
     res.render('index')
 })
+
+app.get('/find',(req,res)=>{
+    res.render('find',{api_key:env.GOOGLE_API_KEY})
+})
