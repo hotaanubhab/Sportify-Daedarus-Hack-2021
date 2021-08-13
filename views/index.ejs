@@ -4,23 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="./styles/spinner.css">
     <link rel="stylesheet" href="./styles/styles.css">
-
+    <link rel="stylesheet" href="./styles/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Sportify</title>
 </head>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand nostyle" href="#">Sportify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active nostyle" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nostyle" href="#">Find a teammate</a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link nostyle lastitem" href="#" tabindex="-1" aria-disabled="true">Start event</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-outline-light">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
 <body>
     
     <section class="webgl"></section>
     
     <div class="box1 box">
         <div class="boxtext bigtext">
-          Find your sport
+          Find your<br>
+          <span class="typed"></span>
         </div>
     </div>
     <div class="box2 box">
@@ -66,10 +93,29 @@
         </button>
       </a>
     </div>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+        var typed = new Typed('.typed', {
+          strings: ["Teammate^500", "Opponent^500","Partner^500","Rival^500","Workout Buddy^500","Running Partner^500","Sport^500"],
+          typeSpeed: 50,
+          backSpeed: 50
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="./assets/three.js"></script>
     <script type=module src="./assets/my3js.js"></script>
+    <section id="loading-screen">
+      <div class="spinner">
+      <div class="loading">
+        <div class="arc"></div>
+        <div class="arc"></div>
+        <div class="arc"></div>
+      </div>
+      </div>
+    </section>
    
 </body>
 

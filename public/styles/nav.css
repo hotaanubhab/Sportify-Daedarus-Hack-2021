@@ -1,0 +1,45 @@
+
+nav
+{
+    z-index: 100;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: 'Ubuntu', sans-serif;
+
+}
+.navbar-toggler-icon
+{
+    color: rgb(255, 255, 255)!important;
+}
+a.nostyle:link {
+    text-decoration: inherit;
+    color:white;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color:white;
+    cursor: auto;
+}
+
+@media screen and (max-width: 991px) {
+    /* bug at wid=991 */
+    .nav-link,.d-flex 
+    {
+      padding-left: 20px!important;
+    }
+    .lastitem
+    {
+        margin-bottom: -10px;
+    }
+    .d-flex 
+    {
+       padding-top: 10px; 
+       padding-bottom: 10px; 
+    }
+    nav 
+    {
+        background-color:rgb(49, 11, 110) ;
+    }
+  }

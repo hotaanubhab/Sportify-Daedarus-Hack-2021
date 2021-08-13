@@ -39,7 +39,7 @@ line-height: 1.1em;
 
 .box1
 {
-    display: none;
+    /* display: none; */
 }
 .box2
 {
@@ -59,13 +59,16 @@ line-height: 1.1em;
 }
 .box6
 {
- /* display: none; */
+ display: none;
 }
 .btn-outline-light
 {
     margin-right: 10px;
 }
-
+.typed-cursor
+{
+    display: none;
+}
 .activ
     
 {
@@ -97,8 +100,13 @@ margin-top: 5vh;
     cursor: auto;
 }
 
+#loading-screen
+{
+    display: none;
+}
+
 @media screen and (max-width: 991px) {
-   
+    /* bug at wid=991 */
    
   }
   
