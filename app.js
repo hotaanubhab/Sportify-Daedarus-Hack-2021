@@ -7,7 +7,7 @@ const Event = require('./models/event')
 
 const app = express();
 
-const dbURI = process.env.MONGO_URI;
+const dbURI = env.MONGO_URI;
 mongoose.connect(dbURI, {useNewUrlParser:true,useUnifiedTopology:true})
     .then((result)=> {
         console.log('Connected to DB');
