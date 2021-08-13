@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script src="./assets/event.js"></script>
+    <script src="./assets/setevent.js"></script>
     <title>Sportify</title>
 </head>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
@@ -49,8 +49,23 @@
 <div class="mapwindow">
     <div class="mapform">
         <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-        <input type="text" id="latitude" class="controls" placeholder="latitude"><br>
-        <input type="text" id="longitude" class="controls" placeholder="longitude">
+        <input type="hidden" id="latitude" class="controls" placeholder="latitude"><br>
+        <input type="hidden" id="longitude" class="controls" placeholder="longitude">
+        <input type="text" id="name" class="controls" placeholder="Name">
+        <input type="number" id="minpeeps" class="controls" placeholder="Min. Partcipants">
+        <textarea type="text" id="description" placeholder="Description"></textarea>
+        <select id="Activity">
+        <option value="cricket">Cricket</option>
+        <option value="football">Football</option>
+        <option value="tennis">Tennis</option>
+        <option value="badminton">Badminton</option>
+        <option value="volleyball">Volleyball</option>
+        <option value="basketball">Basketball</option>
+        <option value="hockey">Hockey</option>
+        <option value="running">Running</option>
+        <option value="workout">Workout</option>
+        </select>
+        
     </div>
     <div id="map"></div>
     
