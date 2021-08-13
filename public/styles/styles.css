@@ -100,11 +100,6 @@ margin-top: 5vh;
     cursor: auto;
 }
 
-#loading-screen
-{
-    display: none;
-}
-
 @media screen and (max-width: 991px) {
     /* bug at wid=991 */
    

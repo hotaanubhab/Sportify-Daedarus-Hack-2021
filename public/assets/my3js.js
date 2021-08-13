@@ -1,7 +1,13 @@
 let dx,dy,posvalues,distvalues,snap,aimTimeline,currentTimeline,renderer;
 let  globe,tennis,basketball,beachball,football,softball,cloud,scene,camera;
 
-
+function loading(){
+  setTimeout(function(){
+    const loadingScreen = document.getElementById( 'loading-screen' );	
+    loadingScreen.classList.add( 'fade-out' );
+    loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
+  })
+}
 
 function init() {   
 
@@ -10,7 +16,7 @@ function init() {
 
 // Globe
 const ggeometry = new THREE.SphereGeometry(1,64,64);
-const gtexture = new THREE.TextureLoader().load( './images/map.jpg');
+const gtexture = new THREE.TextureLoader().load( './images/map.jpg',loading);
 const gbumpMap = new THREE.TextureLoader().load('./images/bumpMap.jpg')
 const gmaterial = new THREE.MeshPhongMaterial({map:gtexture,bumpMap:gbumpMap});
 gmaterial.specularMap = new THREE.TextureLoader().load('./images/specMap.jpg')
@@ -126,6 +132,12 @@ function onWindowResize() {
 
 }
 
+function onTransitionEnd( event ) {
+
+	const element = event.target;
+	element.remove();
+	
+}
 
 
 function animate()
