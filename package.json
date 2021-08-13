@@ -1,0 +1,27 @@
+{
+  "name": "sportify-daedarus-hack-2021",
+  "version": "1.0.0",
+  "description": "An application to connect with sport events and enthusiasts around you.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotaanubhab/Sportify-Daedarus-Hack-2021.git"
+  },
+  "author": "Team Triple_5 (Anubhab Hota,Prabhav Tewari,Aryan Raj Banerjee)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hotaanubhab/Sportify-Daedarus-Hack-2021/issues"
+  },
+  "homepage": "https://github.com/hotaanubhab/Sportify-Daedarus-Hack-2021#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
