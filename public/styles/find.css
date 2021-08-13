@@ -1,0 +1,104 @@
+
+html
+{
+    margin: 0px;
+    overflow-x: hidden;
+
+}
+body{
+    margin-top: 0;
+    margin-left: 0;
+    background-image:linear-gradient(180deg, rgba(22,10,71,1) 0%, rgba(96,4,122,1) 100%);
+    height: fit-content;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Bebas Neue';
+
+}
+
+.mapwindow
+{
+   padding-top: 10vh;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+}
+
+#map 
+{
+    height: 100%;
+    width: 70vw;
+    /* display: none; */
+}
+.mapfilter
+{
+    height: 100%;
+    width: 30vw;
+    background-color: rgba(135, 24, 179, 0.466);
+}
+
+.gm-svpc
+{
+  display: none;
+}
+.selector-control {
+margin-top: 10px;
+}
+
+#searchInput
+{
+margin: 20px 10% 0 10%;
+width: 80%;
+
+}
+
+.datepicker
+{
+  margin: 20px 10% 0 10%;
+width: 80%;
+}
+  /* .map-control {
+    background-color: rgba(5, 5, 8, 0.61);
+    border: 1px solid rgb(14, 5, 5);
+    box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+    font-family: "Roboto", "sans-serif";
+    margin: 0px;
+
+  } */
+  
+  /* Display the control once it is inside the map. */
+  /* #map .map-control {
+    display: block;
+  } */
+  
+
+
+  /* #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  } */
+ 
+  /* .custom-map-control-button {
+    background-color: #fff;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    height: 30px;
+    cursor: pointer;
+  } */
+  /* .custom-map-control-button:hover {
+    background: #ebebeb;
+  } */
+
+  /* .title {
+    font-weight: bold;
+  } */
+
+  
+  /* #map #infowindow-content {
+    display: inline;
+  } */
