@@ -4,7 +4,7 @@
   "description": "An application to connect with sport events and enthusiasts around you.",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
