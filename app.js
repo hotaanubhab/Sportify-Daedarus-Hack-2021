@@ -20,3 +20,7 @@ app.get('/',(req,res)=>{
 app.get('/find',(req,res)=>{
     res.render('find',{api_key:env.GOOGLE_API_KEY})
 })
+
+app.get('/event',(req,res)=>{
+    res.render('event',{api_key:env.GOOGLE_API_KEY})
+})

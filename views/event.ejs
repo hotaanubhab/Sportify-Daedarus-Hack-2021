@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/spinner.css">
+    <link rel="stylesheet" href="./styles/find.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="./assets/event.js"></script>
+    <title>Sportify</title>
+</head>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand nostyle" href="#">Sportify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link nostyle" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active nostyle" href="/find">Find a teammate</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nostyle lastitem" href="#" tabindex="-1" aria-disabled="true">Start event</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-outline-light">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+<body>
+    
+
+<div class="mapwindow">
+    <div class="mapform">
+        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+        <input type="text" id="latitude" class="controls" placeholder="latitude"><br>
+        <input type="text" id="longitude" class="controls" placeholder="longitude">
+    </div>
+    <div id="map"></div>
+    
+
+
+</div>
+
+
+
+<div class="content">
+    <div id="style-selector-control" class="map-control">
+      <select id="style-selector" class="selector-control form-control">
+        <option value="night" selected="selected">Night mode</option>
+        <option value="default">Default</option>
+        <option value="silver">Silver</option>
+        <option value="retro" >Retro</option>
+        <option value="hiding">Hide features</option>
+      </select>
+    </div>
+</div>
+
+
+    <!-- <div id="infowindow-content">
+      <img id="place-icon" src="" height="16" width="16" />
+      <span id="place-name" class="title"></span><br />
+      Place ID <span id="place-id"></span><br />
+      <span id="place-address"></span>
+    </div> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
+
+  
+
+
+    
+
+  </body>
+<!-- <div class="spinner">
+<div class="loading">
+  <div class="arc"></div>
+  <div class="arc"></div>
+  <div class="arc"></div>
+</div>
+</div> -->
+</html>
