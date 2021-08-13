@@ -1,4 +1,10 @@
-
+#find_yr{
+    opacity: 0;
+    transition: 0.5s opacity;
+}
+#find_yr.fade-in {
+    opacity: 1;
+}
 #loading-screen {
 	position: fixed;
 	z-index: 100;

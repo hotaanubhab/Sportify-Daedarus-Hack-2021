@@ -3,8 +3,15 @@ let  globe,tennis,basketball,beachball,football,softball,cloud,scene,camera;
 
 function loading(){
   setTimeout(function(){
-    const loadingScreen = document.getElementById( 'loading-screen' );	
+    const loadingScreen = document.getElementById( 'loading-screen' );
+    const find_yr = document.getElementById( 'find_yr' );	
     loadingScreen.classList.add( 'fade-out' );
+    find_yr.classList.add( 'fade-in' );
+    var typed = new Typed('.typed', {
+      strings: ["Teammate^500", "Opponent^500","Partner^500","Rival^500","Workout Buddy^500","Running Partner^500","Sport^500"],
+      typeSpeed: 50,
+      backSpeed: 50
+    });
     loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
   })
 }
