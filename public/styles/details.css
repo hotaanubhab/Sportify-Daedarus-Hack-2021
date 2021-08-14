@@ -99,6 +99,10 @@ font-size: 1.3em;
 /* margin-right: 10px; */
 margin: auto 10px auto 0;
 }
+.viewdesc
+{
+margin: auto 10px auto 0;
+}
 .btn-outline-success
 {
   color: greenyellow!important;
@@ -108,4 +112,8 @@ margin: auto 10px auto 0;
 {
   margin:10px 0 20px 0;
   text-align: center;
+}
+.maxpeeps
+{
+  font-size: 1.8em;
 }
