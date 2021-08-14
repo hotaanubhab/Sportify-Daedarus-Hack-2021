@@ -1,4 +1,4 @@
-[![forthebadge]()](https://forthebadge.com)
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
@@ -37,7 +37,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#prerequisites">Dependencies</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -54,11 +54,9 @@
 [![screenshot]
 
 Sportify aims to promote fitness among the youth of the world by bringing athletes closer. We plan to use the same technology which is putting kids behind screens 
-to make them interested in sports agaij
+to make them interested in sports again.
 Sportify is a unique platform which the user can use to find like minded workout buddies or even running partners to share your goals and achievements with.
 You can make your own sport events or find your required event anywhere or near you and join your companion.
-
-
 
 
 ### Built With
@@ -75,7 +73,7 @@ You can make your own sport events or find your required event anywhere or near 
 ## Getting Started
 
 
-### Prerequisites
+### Dependencies
 
 * Node-
   Go to [official Node.js website](https://nodejs.org/) and download the installer.
