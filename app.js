@@ -42,7 +42,7 @@ const thumbs = {
      Basketball:'<i class="fas fa-basketball-ball"></i>',
      Hockey:'<span class="material-icons">sports_hockey</span>',
      Running:'<i class="fas fa-running"></i>',
-     Workout:'<span class="material-icons">fitess_center</span>'
+     Workout:'<span class="material-icons">fitness_center</span>'
    };
 
 //Sandbox routes
