@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/spinner.css">
     <link rel="stylesheet" href="./styles/create.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +61,7 @@
     <div class="mapform mapfilter">
         <input id="searchInput" class="controls form-control" type="text" placeholder="Search location">
         <form action="/add-event" method="post">
-        <input type="text" name="datetimes" id="datepicker"class="datepicker form-control"/>
+        <input type="datetime-local" name="" id="datepicker"class="datepicker form-control"/>
         <input type="hidden" name="lat" id="latitude" class="controls" placeholder="latitude">
         <input type="hidden" name="lng" id="longitude" class="controls" placeholder="longitude">
         <input type="hidden" name="email" id="email" class="controls" placeholder="email" value="<%= user.email %>">
@@ -108,25 +107,9 @@
 
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
-    <script>
-      var start,end;
-      $(function() {
-        $('input[name="datetimes"]').daterangepicker({
-          timePicker: true,
-          startDate: moment().startOf('hour'),
-          endDate: moment().startOf('hour').add(96, 'hour'),
-          locale: {
-            format: 'DD/MM/YY,HH:mm'
-          }
-        });
-      });
-      </script>
+
   
 
 
