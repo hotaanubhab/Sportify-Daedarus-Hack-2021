@@ -18,8 +18,25 @@
         // Add the API key copied from 2nd step
         apiKey: "<%- sawo_key %>",
         // Add a callback here to handle the payload sent by sdk
-        onSuccess: (payload) => {
-            console.log(payload)
+        onSuccess: async (payload) => {
+            //console.log(payload);
+            const user_id = payload.user_id;
+            const email = payload.identifier;
+            try{
+                const res = await fetch('/add-user',{
+                  method: 'POST', 
+                  body: JSON.stringify({ user_id, email }),
+                  headers: {'Content-Type': 'application/json'}
+                });
+                const data = await res.json();
+                //console.log(data);
+                if (data.user_id) {
+                  location.assign('/');
+                }
+            }
+            catch{
+
+            }
         },
     };
     var sawo = new Sawo(config);
