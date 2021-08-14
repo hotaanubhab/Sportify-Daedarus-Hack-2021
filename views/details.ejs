@@ -14,7 +14,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script src="/assets/setevent.js"></script>
+    <script src="/assets/details.js"></script>
     <title>Sportify</title>
 </head>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
@@ -120,7 +120,11 @@
 
 
 
-
+    <script>
+      const lat = <%- events.lat %>;
+      const lng = <%- events.lng %>;
+      console.log(lat, lng);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
     <script src="https://kit.fontawesome.com/<%=fakey%>" crossorigin="anonymous"></script>
