@@ -1,0 +1,34 @@
+html{
+    margin: 0;
+
+}
+.logincont
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image:linear-gradient(180deg, rgba(22,10,71,1) 0%, rgba(96,4,122,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* vertical-align: middle; */
+    width: 100vw;
+    height: 100vh;
+}
+
+.loginhead
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800;
+    color: #7f0565;
+    font-size: 3em;
+    text-align: center;
+}
+.loginbox
+{
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding-bottom: 20px;
+
+}

@@ -4,12 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Login</title>
 </head>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand nostyle" href="/">Sportify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link  nostyle" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nostyle" href="/find">Find a teammate</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nostyle lastitem" href="/event" tabindex="-1" aria-disabled="true">Start event</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <% if(user) { %>
+            <div class="logout">
+            Hello, <%= user.email %>
+            <button class="btn btn-outline-light" onclick="location.assign('/logout')">
+              Logout
+            </button>
+            <% } else { %>
+            <button id="login"class="btn btn-outline-light login" onclick="location.assign('/login')"> 
+              Login
+            </button>
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
 <body>
-    <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+        <div class="logincont">
+            <div class="loginbox">
+                <div class="loginhead">LOGIN</div>
+                <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+            </div>
+        </div>
     <script src="https://websdk.sawolabs.com/sawo.min.js"></script>    
-<script>
+    <script>
     var config = {
         // should be same as the id of the container created on 3rd step
         containerID: "sawo-container",
