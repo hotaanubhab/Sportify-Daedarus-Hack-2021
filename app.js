@@ -7,6 +7,7 @@ const User = require('./models/user')
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const { requireAuth,checkUser } = require('./middleware/authMiddleware');
+const request = require('request');
 
 const app = express();
 
@@ -37,7 +38,7 @@ const thumbs = {
     Cricket: '<span class="material-icons">sports_cricket</span>',
      Football:'<i class="fas fa-futbol"></i>',
      Tennis:'<span class="material-icons">sports_tennis</span>',
-     Badminton:'<img src="./icons/badminton.svg" alt="">',
+     Badminton:'<img src="/icons/badminton.svg" alt="">',
      Volleyball:'<i class="fas fa-volleyball-ball"></i>',
      Basketball:'<i class="fas fa-basketball-ball"></i>',
      Hockey:'<span class="material-icons">sports_hockey</span>',
@@ -89,15 +90,20 @@ app.get('/find',requireAuth,async (req,res)=>{
 })
 
 app.get('/details/:id',requireAuth,async (req,res)=>{
-    let events;
+    let events,address;
     await Event.findById(req.params.id)
-        .then((result)=>{
-            events=result;
+        .then(async(result)=>{
+               await request(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${result.lat},${result.lng}&key=${env.GOOGLE_API_KEY}`, { json: true }, (err, response, body) => {
+                    if (err) { return console.log(err); }
+                    address = body.results[0].formatted_address;
+                    console.log(address);
+                    events=result;
+                    res.render('details',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs,address:address})
+                  });
         })
         .catch((err)=>{
             console.log(err);
         });
-    res.render('details',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
 })
 
 app.get('/event',requireAuth,(req,res)=>{
