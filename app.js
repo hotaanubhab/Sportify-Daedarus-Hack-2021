@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Event = require('./models/event')
+const User = require('./models/user')
 
 
 const app = express();
@@ -83,7 +84,23 @@ app.get('/login',(req,res)=>{
     res.render('login',{sawo_key:env.SAWO_KEY})
 })
 
-app.post('/add-user',(req,res)=>{
+app.post('/add-user',async (req,res)=>{
     const {user_id,email} = req.body;
-    res.send(req.body);
+    try{
+        const user = await User.login(user_id, email);
+        res.send(user);
+    }
+    catch{
+        const user = new User({
+            user_id:user_id,
+            email:email
+        });
+        user.save()
+        .then((result)=>{
+            res.send(result);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    }
 })
