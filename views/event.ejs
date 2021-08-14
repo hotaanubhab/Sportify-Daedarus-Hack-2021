@@ -49,27 +49,28 @@
 
 <div class="mapwindow">
     <div class="mapform mapfilter">
-        <input id="searchInput" class="controls form-control" type="text" placeholder="Enter a location">
+        <input id="searchInput" class="controls form-control" type="text" placeholder="Search location">
+        <input type="text" name="datetimes" class="datepicker "/>
         <input type="hidden" id="latitude" class="controls" placeholder="latitude">
         <input type="hidden" id="longitude" class="controls" placeholder="longitude">
         <input type="text" id="name" class="controls form-control" placeholder="Name">
         <input type="number" id="minpeeps" class="controls form-control" placeholder="Min. Partcipants">
         <textarea type="text" id="description" class="form-control" placeholder="Description"></textarea>
         <select id="Activity" class="">
-          
-        <option value="cricket"> Cricket  </option>
-        <option value="football">Football</option>
-        <option value="tennis">Tennis</option>
-        <option value="badminton">Badminton</option>
-        <option value="volleyball">Volleyball</option>
-        <option value="basketball">Basketball</option>
-        <option value="hockey">Hockey</option>
-        <option value="running">Running</option>
-        <option value="workout">Workout</option>
+            <option value="Cricket"> Cricket  <img src="./icons/cricket.svg" alt="">  </option>
+            <option value="Football">Football</option>
+            <option value="Tennis">Tennis</option>
+            <option value="Badminton">Badminton</option>
+            <option value="Volleyball">Volleyball</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Hockey">Hockey</option>
+            <option value="Running">Running</option>
+            <option value="Workout">Workout</option>
         </select>
-        <!-- <img src="./icons/cricket.svg" alt=""> 
-        <span class="material-icons">sports_cricket</span>
-          <img src="./icons/cricket.svg" alt=""> -->
+        
+        <!-- <img src="./icons/cricket.svg" alt="">  -->
+        <!-- <span class="material-icons">sports_cricket</span> -->
+          <!-- <img src="./icons/cricket.svg" alt=""> -->
     </div>
     <div id="map"></div>
     
@@ -92,18 +93,25 @@
 </div>
 
 
-    <!-- <div id="infowindow-content">
-      <img id="place-icon" src="" height="16" width="16" />
-      <span id="place-name" class="title"></span><br />
-      Place ID <span id="place-id"></span><br />
-      <span id="place-address"></span>
-    </div> -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
-
+    <script>
+      $(function() {
+        $('input[name="datetimes"]').daterangepicker({
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(96, 'hour'),
+          locale: {
+            format: 'M/DD hh:mm A'
+          }
+        });
+      });
+      </script>
   
 
 

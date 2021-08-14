@@ -99,14 +99,22 @@
       });
     });
     </script>
+    <div class="findcont">
       <% events.forEach(function(event){ %>
-        <div class="cards"></div>
-      <h1>Card</h1>
-      Name : <%= event.name %><br>
-      Activity : <%= event.activity %><br>
-      Min People : <%= event.minpeeps %><br>
+        <div class="findcard">
+          <div class="factivity"><%= event.activity %> <img src="./icons/cricket.svg" alt=""></div>
+          <div class="fdatetime">On 14/8/2021  at 1:27 PM</div>
+          <div class="fname"><%= event.name %></div>
+
+          <div class="fcounter">6 Going</div>
+          <div class="fbtnrow">
+            <button class="fgoing btn btn-outline-success"> Going </button>
+            <button class="fmightgo btn btn-outline-warning"> Interested </button>
+            <button class="fmightgo btn btn-outline-info"> Know More </button>
+          </div>
       </div>
       <% }) %>
+    </div>
   </body>
 <!-- <div class="spinner">
 <div class="loading">

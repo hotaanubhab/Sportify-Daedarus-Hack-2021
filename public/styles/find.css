@@ -56,49 +56,43 @@ width: 80%;
   margin: 20px 10% 0 10%;
 width: 80%;
 }
-  /* .map-control {
-    background-color: rgba(5, 5, 8, 0.61);
-    border: 1px solid rgb(14, 5, 5);
-    box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-    font-family: "Roboto", "sans-serif";
-    margin: 0px;
-
-  } */
-  
-  /* Display the control once it is inside the map. */
-  /* #map .map-control {
-    display: block;
-  } */
-  
 
 
-  /* #description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-  } */
- 
-  /* .custom-map-control-button {
-    background-color: #fff;
-    border: 0;
-    border-radius: 20px;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-    margin: 10px;
-    padding: 0 0.5em;
-    font: 400 18px Roboto, Arial, sans-serif;
-    overflow: hidden;
-    height: 30px;
-    cursor: pointer;
-  } */
-  /* .custom-map-control-button:hover {
-    background: #ebebeb;
-  } */
+/* Find Card */
 
-  /* .title {
-    font-weight: bold;
-  } */
+.findcont
+{
 
-  
-  /* #map #infowindow-content {
-    display: inline;
-  } */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1rem;
+    align-items: center;
+
+}
+.findcard
+{
+  background-color: aliceblue;
+  width: 90%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 5% 20px 5%;
+  display: block;
+
+}
+
+.factivity
+{
+  font-size: 2em;
+  font-weight: 600;
+  display: flex;
+}
+.factivity img{
+  margin-left: auto;
+  margin-right: 10px;
+}
+.fbtnrow
+{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
