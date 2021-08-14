@@ -185,6 +185,49 @@ function animate()
     cloud.material.opacity=(0.2-currentTimeline)/0.2
     
     renderer.render(scene,camera)
+
+
+    const b1 = document.getElementById( 'box1' );	
+    const b2 = document.getElementById( 'box2' );	
+    const b3 = document.getElementById( 'box3' );	
+    const b4 = document.getElementById( 'box4' );	
+    const b5 = document.getElementById( 'box5' );	
+    const b6 = document.getElementById( 'box6' );	
+
+    switch(Math.floor(pageYOffset/1000)) {
+      case 0:
+      b1.style.opacity = 1
+      b2.style.opacity = 0
+      break;
+      case 1:
+        b1.style.opacity = 0
+        b2.style.opacity = 1
+        b3.style.opacity = 0
+        break;
+      case 2:
+        b2.style.opacity = 0
+        b3.style.opacity = 1
+        b4.style.opacity = 0
+        break;
+      case 3:
+        b3.style.opacity = 0
+        b4.style.opacity = 1
+        b5.style.opacity = 0
+        break;
+      case 4:
+        b4.style.opacity = 0
+        b5.style.opacity = 1
+        b6.style.opacity = 0
+        break;                              
+      case 5:
+        b5.style.opacity = 0
+        b6.style.opacity = 1
+        break;                              
+      default:
+        b5.style.opacity = 0
+        b6.style.opacity = 1
+    }
+    // console.log(pageYOffset/1000)
 }
 init();
 animate()

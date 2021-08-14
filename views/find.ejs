@@ -123,10 +123,11 @@
     });
     </script>
 
+    
     <div class="findcont">
       <% events.forEach(function(event){ %>
         <div class="findcard">
-          <div class="factivity"><%= event.activity %>  <span class="material-icons">fitness_center</span>  </div>
+          <div class="factivity"><%= event.activity %> <%- thumbs[event.activity] %>  </div>
           
           <!-- <img src="./icons/badminton.svg" alt="">  -->
           <div class="fname">With <%= event.name %> and 6 more </div>          

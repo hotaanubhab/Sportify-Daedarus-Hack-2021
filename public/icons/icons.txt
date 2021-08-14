@@ -1,13 +1,13 @@
     <script>
       thumbs={
-        <span class="material-icons">sports_cricket</span>
-        <i class="fas fa-futbol"></i>
-        <span class="material-icons">sports_tennis</span>
-        badminton
-        <i class="fas fa-volleyball-ball"></i>
-        <i class="fas fa-basketball-ball"></i>
-        <span class="material-icons">sports_hockey</span>
-        <i class="fas fa-running"></i>
-        <span class="material-icons">fitness_center</span>
+       Cricket: "<span class="material-icons">sports_cricket</span>"
+        Football:"<i class="fas fa-futbol"></i>"
+        Tennis:"<span class="material-icons">sports_tennis</span>"
+        Badminton:"<img src="./icons/badminton.svg" alt="">"
+        Volleyball:"<i class="fas fa-volleyball-ball"></i>"
+        Basketball:"<i class="fas fa-basketball-ball"></i>"
+        Hockey:"<span class="material-icons">sports_hockey</span>"
+        Running:"<i class="fas fa-running"></i>"
+        Workout:"<span class="material-icons">fitness_center</span>"
       }
     </script>
