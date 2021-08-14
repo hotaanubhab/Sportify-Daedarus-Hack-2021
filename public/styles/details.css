@@ -34,33 +34,31 @@ body{
 {
     height: fit-content;
     width: 50vw;
-    background-color: rgba(135, 24, 179, 0.466);
+    background-color: rgba(135, 24, 179, 0.274);
     padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
 }
-
 .gm-svpc
 {
   display: none;
 }
+
 .selector-control {
 margin-top: 10px;
 }
 
-#searchInput,#name,#minpeeps,#description,#Activity,#datepicker
+.viewr1
 {
-margin: 20px 10% 0 10%;
-width: 80%;
-
-}
-#latitude,#longitude
-{
-  display: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px 0px 20px;
+  font-size: 3em;
 }
 
-
-.datepicker
+.viewr1 i,.viewr1 span,.viewr1 img
 {
-  margin: 20px 10% 0 10%;
-width: 80%;
+  margin: auto 0px auto 0px;
 }
-  
+
+

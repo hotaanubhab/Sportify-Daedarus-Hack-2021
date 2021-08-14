@@ -109,7 +109,7 @@ app.get('/event',requireAuth,(req,res)=>{
 })
 
 app.get('/details',(req,res)=>{
-    res.render('details',{api_key:env.GOOGLE_API_KEY})
+    res.render('details',{api_key:env.GOOGLE_API_KEY,fakey:env.FONT_KEY})
 })
 
 app.get('/login',(req,res)=>{
