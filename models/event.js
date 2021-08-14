@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
+    email:{
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true
@@ -24,6 +28,14 @@ const eventSchema = new Schema({
     },
     description: {
         type: String,
+        required: true
+    },
+    start: {
+        type: Date,
+        required: true
+    },
+    end: {
+        type: Date,
         required: true
     }
 },{timestamps:true});
