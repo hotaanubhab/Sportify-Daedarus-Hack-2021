@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -34,12 +35,20 @@
           <li class="nav-item">
             <a class="nav-link nostyle lastitem" href="/event" tabindex="-1" aria-disabled="true">Start event</a>
           </li>
+
         </ul>
-        <div class="d-flex">
-          <button class="btn btn-outline-light">
+        
+          <button id="login"class="btn btn-outline-light login">
             Login
           </button>
+          <div class="logout">
+          Hello, Joh Doe
+          <button class="btn btn-outline-light">
+            Logout
+          </button>
         </div>
+
+        
       </div>
     </div>
   </nav>
@@ -48,8 +57,22 @@
 
 <div class="mapwindow">
     <div class="mapfilter">
-        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-        <input type="text" name="datetimes" class="datepicker"/>
+        <input id="searchInput" class="controls form-control" type="text" placeholder="Enter a location">
+        <input type="text" name="datetimes" id="datepicker" class="datepicker form-control"/>
+
+        <select id="Activity" class="form-control">
+          <option value="Any"> Any </option>
+          <option value="Cricket"> Cricket </option>
+          <option value="Football">Football</option>
+          <option value="Tennis">Tennis</option>
+          <option value="Badminton">Badminton</option>
+          <option value="Volleyball">Volleyball</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Hockey">Hockey</option>
+          <option value="Running">Running</option>
+          <option value="Workout">Workout</option>
+      </select>
+      <button type="button" class="btn btn-outline-light applybtn">Apply</button>
     </div>
     <div id="map"></div>
     
@@ -83,7 +106,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
-
+    <script src="https://kit.fontawesome.com/" crossorigin="anonymous"></script>
   
 
 
@@ -99,21 +122,24 @@
       });
     });
     </script>
+
     <div class="findcont">
       <% events.forEach(function(event){ %>
         <div class="findcard">
-          <div class="factivity"><%= event.activity %> <img src="./icons/cricket.svg" alt=""></div>
+          <div class="factivity"><%= event.activity %> <img src="./icons/badminton.svg" alt="">    </div>
+          <!-- <span class="material-icons">fitness_center</span> -->
+          
           <div class="fdatetime">On 14/8/2021  at 1:27 PM</div>
           <div class="fname"><%= event.name %></div>
-
           <div class="fcounter">6 Going</div>
           <div class="fbtnrow">
             <button class="fgoing btn btn-outline-success"> Going </button>
-            <button class="fmightgo btn btn-outline-warning"> Interested </button>
+            <button class="fmightgo btn btn-outline-secondary"> Interested </button>
             <button class="fmightgo btn btn-outline-info"> Know More </button>
           </div>
       </div>
       <% }) %>
+      
     </div>
   </body>
 <!-- <div class="spinner">

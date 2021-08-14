@@ -75,6 +75,10 @@ app.get('/event',(req,res)=>{
     res.render('event',{api_key:env.GOOGLE_API_KEY})
 })
 
+app.get('/details',(req,res)=>{
+    res.render('details',{api_key:env.GOOGLE_API_KEY})
+})
+
 app.get('/login',(req,res)=>{
     res.render('login',{sawo_key:env.SAWO_KEY})
 })

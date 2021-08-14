@@ -15,8 +15,11 @@ a.nostyle:link {
     text-decoration: inherit;
     color:white;
 }
-a.nev-link.nostyle:hover{
+a.nev-link.nostyle:hover,.logout.btn:hover{
     cursor: pointer;
+}
+.logout:hover{
+    cursor: default;
 }
 
 a.nostyle:visited {
@@ -24,6 +27,27 @@ a.nostyle:visited {
     color:white;
     cursor: auto;
 }
+
+.logout
+{
+    color: white;
+    margin-right: 10px;
+}
+.logout .btn
+{
+    margin-left: 15px;
+}
+.logout
+{
+    /* display: none; */
+}
+
+.login,#login
+{
+    margin-right: 10px;
+    display: none;
+}
+
 
 @media screen and (max-width: 991px) {
     /* bug at wid=991 */

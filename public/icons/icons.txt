@@ -1,0 +1,13 @@
+    <script>
+      thumbs={
+        <span class="material-icons">sports_cricket</span>
+        <i class="fas fa-futbol"></i>
+        <span class="material-icons">sports_tennis</span>
+        badminton
+        <i class="fas fa-volleyball-ball"></i>
+        <i class="fas fa-basketball-ball"></i>
+        <span class="material-icons">sports_hockey</span>
+        <i class="fas fa-running"></i>
+        <span class="material-icons">fitness_center</span>
+      }
+    </script>
