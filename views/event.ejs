@@ -37,14 +37,17 @@
           </li>
         </ul>
         <div class="d-flex">
-          <button id="login"class="btn btn-outline-light login">
-            Login
-          </button>
+          <% if(user) { %>
           <div class="logout">
           Hello, Joh Doe
           <button class="btn btn-outline-light">
             Logout
           </button>
+          <% } else { %>
+          <button id="login"class="btn btn-outline-light login">
+            Login
+          </button>
+          <% } %>
         </div>
       </div>
     </div>

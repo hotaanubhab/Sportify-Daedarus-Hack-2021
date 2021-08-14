@@ -37,15 +37,11 @@ a.nostyle:visited {
 {
     margin-left: 15px;
 }
-.logout
-{
-    /* display: none; */
-}
+
 
 .login,#login
 {
     margin-right: 10px;
-    display: none;
 }
 
 
