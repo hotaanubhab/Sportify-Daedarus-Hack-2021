@@ -43,7 +43,10 @@ a.nostyle:visited {
 {
     margin-right: 10px;
 }
-
+.navbar-brand img{
+    height: 40px;
+    width: 50px;
+}
 
 @media screen and (max-width: 991px) {
     /* bug at wid=991 */

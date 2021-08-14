@@ -43,7 +43,7 @@ body{
 margin-top: 10px;
 }
 
-#searchInput,#name,#minpeeps,#description,#Activity,#datepicker
+#searchInput,#name,#minpeeps,#description,#Activity,#datepicker,#evsubmit
 {
 margin: 20px 10% 0 10%;
 width: 80%;
@@ -61,4 +61,9 @@ width: 80%;
   font-size: 99% !important;
 width: 80%;
 }
-  
+
+/* .evsubmit
+{
+  width: 50%;
+  margin-top: 10px;
+} */

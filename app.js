@@ -111,13 +111,20 @@ app.get('/find',requireAuth,async (req,res)=>{
         });
     res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
 })
+app.get('/details/:id',requireAuth,async (req,res)=>{
+    let events;
+    await Event.findById(req.params.id)
+        .then((result)=>{
+            events=result;
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    res.render('details',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
+})
 
 app.get('/event',requireAuth,(req,res)=>{
     res.render('event',{api_key:env.GOOGLE_API_KEY})
-})
-
-app.get('/details',(req,res)=>{
-    res.render('details',{api_key:env.GOOGLE_API_KEY,fakey:env.FONT_KEY})
 })
 
 app.get('/login',(req,res)=>{
