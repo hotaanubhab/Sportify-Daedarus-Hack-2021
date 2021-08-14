@@ -46,23 +46,31 @@ const thumbs = {
    };
 
 //Sandbox routes
-// app.get('/add-event',(req,res)=>{
-//     const event = new Event({
-//         name: "DJPT",
-//         lat: 420,
-//         lng: 69,
-//         minpeeps: 911,
-//         activity: "Shitting",
-//         description: "Eeeeeeeeeee"
-//     });
-//     event.save()
-//         .then((result)=>{
-//             res.send(result);
-//         })
-//         .catch((err)=>{
-//             console.log(err);
-//         });
-// })
+app.get('/add-event',(req,res)=>{
+    //var date = req.body.datetimes.split(" - ");
+    //console.log(date);
+    var start=new Date("08/15/21 , 00:12");
+    console.log(start);
+    res.send(start);
+    //  const event = new Event({
+    //     name: req.body.name,
+    //     lat: req.body.lat,
+    //     lng: req.body.lng,
+    //     minpeeps: req.body.minpeeps,
+    //     activity: req.body.activity,
+    //      description: req.body.description,
+    //      start: new Date(date[0]),
+    //      end: new Date(date[1]),
+    //      email: req.body.email
+    // });
+    //  event.save()
+    //      .then((result)=>{
+    //          res.send(result);
+    //     })
+    //     .catch((err)=>{
+    //          console.log(err);
+    //     });
+ })
 
 // app.get('/all-events', (req, res)=>{
 //     Event.find()
