@@ -14,7 +14,9 @@ nav
 a.nostyle:link {
     text-decoration: inherit;
     color:white;
-    cursor: auto;
+}
+a.nev-link.nostyle:hover{
+    cursor: pointer;
 }
 
 a.nostyle:visited {

@@ -5,20 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/spinner.css">
-    <link rel="stylesheet" href="./styles/find.css">
+    <link rel="stylesheet" href="./styles/create.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="./assets/setevent.js"></script>
     <title>Sportify</title>
 </head>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand nostyle" href="#">Sportify</a>
+      <a class="navbar-brand nostyle" href="/">Sportify</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,11 +29,11 @@
             <a class="nav-link nostyle" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active nostyle" href="/find">Find a teammate</a>
+            <a class="nav-link nostyle" href="/find">Find a teammate</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link nostyle lastitem" href="#" tabindex="-1" aria-disabled="true">Start event</a>
+            <a class="nav-link nostyle active lastitem" href="/event" tabindex="-1" aria-disabled="true">Start event</a>
           </li>
         </ul>
         <div class="d-flex">
@@ -47,15 +48,16 @@
     
 
 <div class="mapwindow">
-    <div class="mapform">
-        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-        <input type="hidden" id="latitude" class="controls" placeholder="latitude"><br>
+    <div class="mapform mapfilter">
+        <input id="searchInput" class="controls form-control" type="text" placeholder="Enter a location">
+        <input type="hidden" id="latitude" class="controls" placeholder="latitude">
         <input type="hidden" id="longitude" class="controls" placeholder="longitude">
-        <input type="text" id="name" class="controls" placeholder="Name">
-        <input type="number" id="minpeeps" class="controls" placeholder="Min. Partcipants">
-        <textarea type="text" id="description" placeholder="Description"></textarea>
-        <select id="Activity">
-        <option value="cricket">Cricket</option>
+        <input type="text" id="name" class="controls form-control" placeholder="Name">
+        <input type="number" id="minpeeps" class="controls form-control" placeholder="Min. Partcipants">
+        <textarea type="text" id="description" class="form-control" placeholder="Description"></textarea>
+        <select id="Activity" class="">
+          
+        <option value="cricket"> Cricket  </option>
         <option value="football">Football</option>
         <option value="tennis">Tennis</option>
         <option value="badminton">Badminton</option>
@@ -65,7 +67,9 @@
         <option value="running">Running</option>
         <option value="workout">Workout</option>
         </select>
-        
+        <!-- <img src="./icons/cricket.svg" alt=""> 
+        <span class="material-icons">sports_cricket</span>
+          <img src="./icons/cricket.svg" alt=""> -->
     </div>
     <div id="map"></div>
     
