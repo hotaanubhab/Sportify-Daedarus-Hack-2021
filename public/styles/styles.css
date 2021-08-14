@@ -40,26 +40,32 @@ line-height: 1.1em;
 .box1
 {
     /* display: none; */
+    opacity: 0;
 }
 .box2
 {
-    display: none;
+    /* display: none; */
+    opacity: 0;
 }
 .box3
 {
- display: none;
+ /* display: none; */
+ opacity: 0;
 }
 .box4
 {
- display: none;
+ /* display: none; */
+ opacity: 0;
 }
 .box5
 {
- display: none;
+ /* display: none; */
+ opacity: 0;
 }
 .box6
 {
- display: none;
+ /* display: none; */
+ opacity: 0;
 }
 .btn-outline-light
 {

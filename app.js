@@ -27,6 +27,20 @@ app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 app.use(morgan('dev'));
 
+//icons
+
+const thumbs = {
+    Cricket: '<span class="material-icons">sports_cricket</span>',
+     Football:'<i class="fas fa-futbol"></i>',
+     Tennis:'<span class="material-icons">sports_tennis</span>',
+     Badminton:'<img src="./icons/badminton.svg" alt="">',
+     Volleyball:'<i class="fas fa-volleyball-ball"></i>',
+     Basketball:'<i class="fas fa-basketball-ball"></i>',
+     Hockey:'<span class="material-icons">sports_hockey</span>',
+     Running:'<i class="fas fa-running"></i>',
+     Workout:'<span class="material-icons">fitess_center</span>'
+   };
+
 //Sandbox routes
 app.get('/add-event',(req,res)=>{
     const event = new Event({
@@ -69,7 +83,7 @@ app.get('/find',async (req,res)=>{
         .catch((err)=>{
             console.log(err);
         });
-    res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY})
+    res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
 })
 
 app.get('/event',(req,res)=>{
