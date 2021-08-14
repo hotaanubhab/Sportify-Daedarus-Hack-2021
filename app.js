@@ -78,7 +78,7 @@ const thumbs = {
 const maxAge = 3 * 24 * 60 * 60;
 
 const createToken = (id) => {
-    return jwt.sign({id},'sportify digum',{expiresIn:maxAge});
+    return jwt.sign({id},env.JWT_SECRET,{expiresIn:maxAge});
 }
 
 app.get('*',checkUser);
