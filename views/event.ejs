@@ -61,14 +61,16 @@
     <div class="mapform mapfilter">
         <input id="searchInput" class="controls form-control" type="text" placeholder="Search location">
         <form action="/add-event" method="post">
-        <input type="datetime-local" name="" id="datepicker"class="datepicker form-control"/>
+        <input type="datetime-local" name="start" id="datepicker"class="datepicker form-control"/>
         <input type="hidden" name="lat" id="latitude" class="controls" placeholder="latitude">
         <input type="hidden" name="lng" id="longitude" class="controls" placeholder="longitude">
         <input type="hidden" name="email" id="email" class="controls" placeholder="email" value="<%= user.email %>">
+        <input type="hidden" name="going" id="going" class="controls" placeholder="going" value=0>
         <input type="text" name="name" id="name" class="controls form-control" placeholder="Name">
-        <input type="number" name="minpeeps" id="minpeeps" class="controls form-control" placeholder="Min. Partcipants">
+        <input type="number" name="minpeeps" id="minpeeps" class="controls form-control" placeholder="Max. Partcipants">
         <textarea type="text" name="description" id="description" class="form-control" placeholder="Description"></textarea>
         <select name="activity" id="Activity" class="form-control">
+            <option value="" disabled selected>Select activity</option>
             <option value="Cricket"> Cricket </option>
             <option value="Football">Football</option>
             <option value="Tennis">Tennis</option>
@@ -109,9 +111,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
-
-  
-
 
     
 

@@ -14,7 +14,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script src="/assets/setevent.js"></script>
+    <script src="/assets/details.js"></script>
     <title>Sportify</title>
 </head>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
@@ -65,28 +65,28 @@
           <div class="viewactivity"> <%= events.activity%> </div>
           <%- thumbs[events.activity] %> 
         </div>
-        <div class="viewname">  Activity by Prabhav T </div>
+        <div class="viewname">  Activity by <%= events.name%> </div>
 
 <!-- <div class="viewactivity">  Kp7, kiit campus, bhubaneswar </div> -->
         <div class="viewr2">
           <div class="viewsdt">
             <div class="viewdthead">Begins</div>  
-            <div class="">15/8/2021</div>  
-            <div class="">4:20pm</div>  
+            <div class=""><%= events.start.toLocaleString() %></div>  
           </div>
-          <div class="viewedt">
-            <div class="viewdthead">Ends</div>  
-            <div class="">15/8/2021</div>  
-            <div class="">6:19pm</div>  
+          <div class="viewmaxpeep">
+            <div class="viewdthead">Maximum People</div>  
+            <div class="maxpeeps"><%= events.minpeeps%></div>  
+
           </div>
+
         </div>
 <div class="viewr3">
   <div class="viewdeschead">
-    Descreption
+    Description
   </div>
-  <div class="viewdesc"> Lorem Ipsum Im gonna run alot bro, dattebayo, i will run from kp 7 to railway station and meet kalia bhaiya</div>
+  <div class="viewdesc">  <%= events.description%> </div>
 </div>
-<div class="viewpeeps"> <b>7</b> People are going  with Prabhav </div>
+<div class="viewpeeps"> <b><%= events.going%></b> People are going  with Prabhav </div>
 <div class="viewr4">
 <button class="fgoing btn btn-outline-success"> Going </button>
 <button class="fmightgo btn btn-outline-warning"> Interested </button>
@@ -120,7 +120,11 @@
 
 
 
-
+    <script>
+      const lat = <%- events.lat %>;
+      const lng = <%- events.lng %>;
+      console.log(lat, lng);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= api_key %>&callback=initMap&v=beta&libraries=places,drawing" async></script>
     <script src="https://kit.fontawesome.com/<%=fakey%>" crossorigin="anonymous"></script>

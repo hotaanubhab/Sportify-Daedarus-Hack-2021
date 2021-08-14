@@ -46,41 +46,17 @@ const thumbs = {
    };
 
 //Sandbox routes
-app.get('/add-event',(req,res)=>{
-    //var date = req.body.datetimes.split(" - ");
-    //console.log(date);
-    var start=new Date("08/15/21 , 00:12");
-    console.log(start);
-    res.send(start);
-    //  const event = new Event({
-    //     name: req.body.name,
-    //     lat: req.body.lat,
-    //     lng: req.body.lng,
-    //     minpeeps: req.body.minpeeps,
-    //     activity: req.body.activity,
-    //      description: req.body.description,
-    //      start: new Date(date[0]),
-    //      end: new Date(date[1]),
-    //      email: req.body.email
-    // });
-    //  event.save()
-    //      .then((result)=>{
-    //          res.send(result);
-    //     })
-    //     .catch((err)=>{
-    //          console.log(err);
-    //     });
+app.post('/add-event',(req,res)=>{
+     const event = new Event(req.body);
+     event.save()
+         .then((result)=>{
+             res.redirect(`/details/${result._id}`)
+        })
+        .catch((err)=>{
+             console.log(err);
+        });
  })
 
-// app.get('/all-events', (req, res)=>{
-//     Event.find()
-//         .then((result)=>{
-//             res.send(result);
-//         })
-//         .catch((err)=>{
-//             console.log(err);
-//         });
-// })
 
 //jsonwebtoken
 const maxAge = 3 * 24 * 60 * 60;
@@ -111,6 +87,7 @@ app.get('/find',requireAuth,async (req,res)=>{
         });
     res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
 })
+
 app.get('/details/:id',requireAuth,async (req,res)=>{
     let events;
     await Event.findById(req.params.id)

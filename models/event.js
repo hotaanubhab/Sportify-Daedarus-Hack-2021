@@ -34,9 +34,9 @@ const eventSchema = new Schema({
         type: Date,
         required: true
     },
-    end: {
-        type: Date,
-        required: true
+    going: {
+        type: Number,
+        required : true
     }
 },{timestamps:true});
 
