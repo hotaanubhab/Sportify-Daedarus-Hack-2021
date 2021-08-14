@@ -97,7 +97,7 @@ var input = document.getElementById('searchInput');
             map.setZoom(17);
         }
         marker.setIcon(({
-            url: place.icon,
+            url:'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png',
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
