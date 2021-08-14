@@ -22,6 +22,8 @@ mongoose.connect(dbURI, {useNewUrlParser:true,useUnifiedTopology:true})
 app.set('view engine','ejs')
 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended:true }));
+app.use(express.json());
 app.use(morgan('dev'));
 
 //Sandbox routes
@@ -75,4 +77,9 @@ app.get('/event',(req,res)=>{
 
 app.get('/login',(req,res)=>{
     res.render('login',{sawo_key:env.SAWO_KEY})
+})
+
+app.post('/add-user',(req,res)=>{
+    const {user_id,email} = req.body;
+    res.send(req.body);
 })
