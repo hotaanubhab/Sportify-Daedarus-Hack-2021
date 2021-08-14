@@ -69,7 +69,7 @@ app.get('/find',async (req,res)=>{
         .catch((err)=>{
             console.log(err);
         });
-    res.render('find',{api_key:env.GOOGLE_API_KEY,events:events})
+    res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY})
 })
 
 app.get('/event',(req,res)=>{

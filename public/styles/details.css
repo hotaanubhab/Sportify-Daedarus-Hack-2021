@@ -9,30 +9,33 @@ body{
     margin-top: 0;
     margin-left: 0;
     background-image:linear-gradient(180deg, rgba(22,10,71,1) 0%, rgba(96,4,122,1) 100%);
-    height: fit-content;
+    height: 90vh;
     font-family: 'Ubuntu', sans-serif;
     font-family: 'Bebas Neue';
 
 }
 
-.mapwindow
+.detailscont
 {
-   padding-top: 10vh;
+   margin-top: 10vh;
     width: 100vw;
     height: 90vh;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #map 
 {
-    height: 100%;
-    width: 70vw;
+    height: 80%;
+    width: 40vw;
 }
-.mapfilter
+.ldetails
 {
-    height: 100%;
-    width: 30vw;
+    height: fit-content;
+    width: 50vw;
     background-color: rgba(135, 24, 179, 0.466);
+    padding-bottom: 20px;
 }
 
 .gm-svpc
