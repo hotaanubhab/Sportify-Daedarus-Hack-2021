@@ -143,7 +143,7 @@
 
     
     <div class="findcont">
-      <% if(events)events.forEach(function(event){ %>
+      <% if(events)events.forEach(function(event,i){ %>
         <div class="findcard">
           <div class="factivity"><%= event.activity %> <%- thumbs[event.activity] %>  </div>
           
@@ -151,12 +151,31 @@
           <div class="fname">With <%= event.name %><% if(event.going){ %> and <%= event.going %> more <%}%></div>          
           <div class="fdatetime">On <%= event.start.toLocaleString() %></div>
           <div class="fbtnrow">
-            <button class="fgoing btn btn-outline-success"> Going </button>
+            <input type="hidden" id="event<%=i%>" name="event" value=<%= event._id%>>
+            <button class="fgoing btn btn-outline-success" onclick="setgoing('<%=i%>')"> Going </button>
             <button class="fmightgo btn btn-outline-warning"> Interested </button>
             <button class="fmightgo btn btn-outline-info" onclick="location.assign('/details/<%=event._id%>')"> Know More </button>
           </div>
+          
       </div>
       <% }) %>
+      <script >
+        async function setgoing(num) {
+          console.log(num)
+          var event = document.getElementById("event"+num).value;
+          var email = "<%= user.email%>";
+          const res = await fetch('/add-going',{
+                  method: 'POST', 
+                  body: JSON.stringify({ event, email }),
+                  headers: {'Content-Type': 'application/json'}
+                });
+                const data = await res.json();
+                if(data.event)
+                {
+                  location.reload();
+                }
+        }
+      </script>
       
     </div>
   </body>

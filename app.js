@@ -6,10 +6,12 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Event = require('./models/event')
 const User = require('./models/user')
+const Going = require('./models/going')
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const { requireAuth,checkUser } = require('./middleware/authMiddleware');
 const request = require('request');
+var favicon = require('serve-favicon');
 
 //app
 const app = express();
@@ -31,6 +33,7 @@ app.set('view engine','ejs')
 
 //middleware
 app.use(express.static('public'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -144,6 +147,33 @@ app.get('/find/:activity&:datetime',requireAuth,async (req,res)=>{
         });
        
     res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
+})
+
+app.post('/add-going/',requireAuth,async (req,res)=>{
+    const {event,email} = req.body;
+    try{
+        const going = await Going.add(event, email);
+        res.send(going);
+    }
+    catch{
+        const going = new Going({
+            event:event,
+            email:email
+        });
+        going.save()
+        .then(async(result)=>{
+            await Going.find({event:result.event})
+            .then(async (result)=>{
+                const sz = result.length;
+                console.log(sz);
+                await Event.updateOne({ _id: event }, {going : sz});
+            })
+            res.send(result);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+    }
 })
 
 
