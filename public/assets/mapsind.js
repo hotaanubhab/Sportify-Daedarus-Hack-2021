@@ -1,16 +1,12 @@
 
 let map,service, infoWindow;
 
-function initMap() {  
+async function initMap() {  
   var myLatlng = { lat: 20.5937, lng:  78.9629 };
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: myLatlng,
     // map-control:false
-  });
-  marker = new google.maps.Marker({
-    position: myLatlng,
-    draggable: false
   });
   x=navigator.geolocation;
   x.getCurrentPosition(success,failure);
@@ -23,20 +19,48 @@ function initMap() {
     map.setOptions({
       center: myLatlng,
       zoom: 16
-    });
-    marker.setPosition(myLatlng);
-    marker.setMap(map);  
+    });  
   }
-  
-  marker.setMap(map);
-
-
-
+  const res = await fetch('/all-event',{
+    method: 'GET'
+  });
+  const alleve = await res.json();
+  alleve.forEach(element => {
+    myLatlng = {lat:element.lat,lng:element.lng};
+    var date = new Date(element.start);
+    const contentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    `<h3 id="firstHeading" class="firstHeading">${element.activity}</h3>` +
+    '<div id="bodyContent">' +
+    `<h6>${date.toLocaleString()}</h6>`
+    +`<button class="fmightgo btn btn-outline-info" onclick="location.assign('/details/${element._id}')"> Know More </button>`
+    "</div>" +
+    "</div>";
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+  });
+  const marker = new google.maps.Marker({
+    position: myLatlng,
+    map,
+    icon: {
+      url:'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png',
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(35, 35)
+  }  
+  });
   marker.addListener("click", () => {
-  map.setZoom(16);
-  map.setCenter(marker.getPosition());
-  map.setMarker(marker);
-});
+    infowindow.open({
+      anchor: marker,
+      map,
+      shouldFocus: false,
+    });
+  });
+  });
+
 
 //autocomplete places
 var input = document.getElementById('searchInput');
@@ -47,14 +71,10 @@ var input = document.getElementById('searchInput');
     autocomplete.bindTo('bounds', map);
 
     var infowindow = new google.maps.InfoWindow();
-    var marker = new google.maps.Marker({
-        map: map,
-        anchorPoint: new google.maps.Point(0, -29)
-    });
+    
 
     autocomplete.addListener('place_changed', function() {
         infowindow.close();
-        marker.setVisible(true);
         var place = autocomplete.getPlace();
         if (!place.geometry) {
             window.alert("Autocomplete's returned place contains no geometry");
@@ -68,15 +88,7 @@ var input = document.getElementById('searchInput');
             map.setCenter(place.geometry.location);
             map.setZoom(17);
         }
-        marker.setIcon(({
-            url: place.icon,
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(35, 35)
-        }));
-        marker.setPosition(place.geometry.location);
-        marker.setVisible(true);
+        
     
         var address = '';
         if (place.address_components) {
@@ -88,7 +100,6 @@ var input = document.getElementById('searchInput');
         }
     
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-        infowindow.open(map, marker);
       
         // Location details
         for (var i = 0; i < place.address_components.length; i++) {

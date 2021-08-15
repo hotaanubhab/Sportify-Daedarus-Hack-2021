@@ -58,6 +58,15 @@ app.post('/add-event',(req,res)=>{
         });
  })
 
+app.get('/all-event',async (req,res)=>{
+    await Event.find()
+        .then((result)=>{
+           res.send(result);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+})
 
 //jsonwebtoken
 const maxAge = 3 * 24 * 60 * 60;
