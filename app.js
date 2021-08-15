@@ -1,3 +1,5 @@
+//dependencies
+
 const env = require("./environment.js");
 const express = require('express');
 const morgan = require('morgan');
@@ -9,8 +11,10 @@ const jwt = require('jsonwebtoken');
 const { requireAuth,checkUser } = require('./middleware/authMiddleware');
 const request = require('request');
 
+//app
 const app = express();
 
+//Mongo connection and listen
 const dbURI = env.MONGO_URI;
 mongoose.connect(dbURI, {useNewUrlParser:true,useUnifiedTopology:true})
     .then((result)=> {
@@ -25,15 +29,14 @@ mongoose.connect(dbURI, {useNewUrlParser:true,useUnifiedTopology:true})
 //view engine
 app.set('view engine','ejs')
 
+//middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 app.use(cookieParser());
-
 app.use(morgan('dev'));
 
 //icons
-
 const thumbs = {
     Cricket: '<span class="material-icons">sports_cricket</span>',
      Football:'<i class="fas fa-futbol"></i>',
@@ -69,21 +72,18 @@ app.get('/all-event',async (req,res)=>{
 })
 
 //jsonwebtoken
-const maxAge = 3 * 24 * 60 * 60;
+const maxAge = 1 * 24 * 60 * 60;
 
 const createToken = (id) => {
     return jwt.sign({id},env.JWT_SECRET,{expiresIn:maxAge});
 }
 
+//login status
 app.get('*',checkUser);
 
+//routes
 app.get('/',(req,res)=>{
     res.render('index')
-})
-
-app.get('/logout',(req,res)=>{
-    res.cookie('jwt','',{maxAge:1});
-    res.redirect('/');
 })
 
 app.get('/find',requireAuth,async (req,res)=>{
@@ -119,8 +119,43 @@ app.get('/event',requireAuth,(req,res)=>{
     res.render('event',{api_key:env.GOOGLE_API_KEY})
 })
 
+app.get('/find/:activity&:datetime',requireAuth,async (req,res)=>{
+    var activity = req.params.activity;
+    var datetime = req.params.datetime;
+    var dates = datetime.split(" - ");
+    var st = new Date(dates[0]);
+    var en = new Date(dates[1]);
+    st.setDate(st.getDate());
+    en.setDate(en.getDate()+1);
+    st = st.getTime();
+    en = en.getTime();
+    let events=[];
+    await Event.find()
+        .then((result)=>{
+            result.forEach(element => {
+                if(element.start.getTime()>=st && element.start.getTime()<=en && (activity=="Any" || element.activity==activity)) 
+                {
+                    events.push(element);
+                }
+            });
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+       
+    res.render('find',{api_key:env.GOOGLE_API_KEY,events:events,fakey:env.FONT_KEY,thumbs:thumbs})
+})
+
+
+//auth Routes
+
 app.get('/login',(req,res)=>{
     res.render('login',{sawo_key:env.SAWO_KEY})
+})
+
+app.get('/logout',(req,res)=>{
+    res.cookie('jwt','',{maxAge:1});
+    res.redirect('/');
 })
 
 app.post('/add-user',async (req,res)=>{
@@ -146,6 +181,4 @@ app.post('/add-user',async (req,res)=>{
             console.log(err);
         });
     }
-
-   
 })
