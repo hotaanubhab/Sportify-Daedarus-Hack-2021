@@ -39,11 +39,11 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Dependencies</a></li>
+        <li><a href="#dependencies">Dependencies</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#how-to-use">How To Use</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
     <li><a href="#license">License</a></li>
@@ -68,14 +68,28 @@ You can make your own sport events or find your required event anywhere or near 
 * [Three.js](https://threejs.org)
 * [Express.js](https://expressjs.com)
 * [MongoDB](https://www.mongodb.com/cloud)
-
-
+* [Google Maps API](https://developers.google.com/maps)
+* [SAWO LABS](https://sawolabs.com)
+* [JWT](https://jwt.io/)
+* [EJS](https://ejs.co/)
 
 <!-- GETTING STARTED -->
-## Getting Started
+# Getting Started
+
+## Video Demonstration:
+
+![](public\images\1.JPG)(https://youtu.be/WwMEvS-CH7k)
 
 
-### Dependencies
+***
+
+### Deployment:
+
+Deployed using [Heroku](https://sportifyt5.herokuapp.com/) (Click to Visit!)
+
+***
+
+### Dependencies:
 
 * Node-
   Go to [official Node.js website](https://nodejs.org/) and download the installer.
@@ -109,8 +123,43 @@ You can make your own sport events or find your required event anywhere or near 
 
     nodemon
      //or
-    node start
+    node app.js
+  
+  ***
+  
+## How To Use
+  
+  The landing page consists of 4 main parts- 'Home'  , 'Find a Teammate' , 'Start Event' and 'login':
+  
+  
+  <p align='center'><img src=public\images\1.JPG>
+<p align="center">
 
+  
+ One time Login using your email:
+  
+  
+  <p align='center'><img src=public\images\2.JPG>
+<p align="center">
+  
+  
+ After getting logged in Click into 'Find a Teammate'- There you can set filter options for different sports according to the needs.
+  At the bottom you can see all the available events created by other users:
+  
+  
+  <p align='center'><img src=public\images\3.gif>
+<p align="center">
+  
+  
+  To set an event click 'Set an Event'- Fill the form with your desired location to set an event. You can also choose your required date & time and add description and type of sport:
+  
+  
+  <p align='center'><img src=public\images\4.gif>
+<p align="center">
+  
+  
+  ***
+  
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -119,8 +168,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Google Maps API](https://developers.google.com/maps)
-
-
+* [SAWO LABS](https://sawolabs.com)
 
 <!-- LICENSE -->
 ## License
