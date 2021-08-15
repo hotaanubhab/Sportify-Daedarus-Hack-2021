@@ -1,4 +1,3 @@
-
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
@@ -7,13 +6,16 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/fo-real.svg)](https://forthebadge.com)
 
+[![forthebadge](https://img.shields.io/badge/Made%20using-Google%20Maps-blue)](https://forthebadge.com)
+[![forthebadge](https://img.shields.io/badge/Powered%20By-SAWO%20LABS-yellow)](https://forthebadge.com)
+
 ***
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/hotaanubhab/Sportify-Daedarus-Hack-2021">
-    <img src="" alt="Logo" width="80" height="80">
+    <img src="https://github.com/hotaanubhab/Sportify-Daedarus-Hack-2021/blob/main/public/images/sportifymin.png" alt="Logo" width="100" height="80">
   </a>
 
   <h3 align="center">Sportify</h3>
@@ -51,13 +53,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![screenshot]
-
 Sportify aims to promote fitness among the youth of the world by bringing athletes closer. We plan to use the same technology which is putting kids behind screens 
 to make them interested in sports again.
 Sportify is a unique platform which the user can use to find like minded workout buddies or even running partners to share your goals and achievements with.
 You can make your own sport events or find your required event anywhere or near you and join your companion.
 
+<p align='center'><img src=https://github.com/hotaanubhab/Sportify-Daedarus-Hack-2021/blob/main/public/images/Hnet-image%20(1).gif>
+<p align="center">
 
 ### Built With
 
