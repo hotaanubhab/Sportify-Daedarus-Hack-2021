@@ -91,7 +91,7 @@ app.get('/',(req,res)=>{
 
 app.get('/find',requireAuth,async (req,res)=>{
     let events;
-    await Event.find()
+    await Event.find().sort({createdAt: -1})
         .then((result)=>{
             events=result;
         })
@@ -133,7 +133,7 @@ app.get('/find/:activity&:datetime',requireAuth,async (req,res)=>{
     st = st.getTime();
     en = en.getTime();
     let events=[];
-    await Event.find()
+    await Event.find().sort({start: 1})
         .then((result)=>{
             result.forEach(element => {
                 if(element.start.getTime()>=st && element.start.getTime()<=en && (activity=="Any" || element.activity==activity)) 

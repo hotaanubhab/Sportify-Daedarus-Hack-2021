@@ -97,7 +97,7 @@
 
 
 
-<div class="viewpeeps"> <b><%= events.going%></b> People are going  with <%= events.name%> </div>
+<div class="viewpeeps"><%if(events.going){%> <b><%= events.going%></b> People are going  with <%= events.name %><%}%> </div>
 <div class="viewr5">
 <button class="fgoing btn btn-outline-success" onclick="setgoing()"> Going </button>
 <button class="fmightgo btn btn-outline-warning"> Interested </button>
