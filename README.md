@@ -77,15 +77,18 @@ You can make your own sport events or find your required event anywhere or near 
 # Getting Started
 
 ## Video Demonstration:
-
-![](public\images\1.JPG)(https://youtu.be/WwMEvS-CH7k)
+[![forthebadge](https://img.shields.io/badge/click-link-lightgrey)](https://forthebadge.com)
+  
+[![Sportify-Daedarus-Hack-2021](https://img.youtube.com/vi/WwMEvS-CH7k/0.jpg)](https://www.youtube.com/watch?v=WwMEvS-CH7k)
 
 
 ***
 
 ### Deployment:
 
-Deployed using [Heroku](https://sportifyt5.herokuapp.com/) (Click to Visit!)
+[![forthebadge](https://img.shields.io/badge/click-link-lightgrey)](https://forthebadge.com)
+  
+Deployed using [Heroku](https://sportifyt5.herokuapp.com/) 
 
 ***
 
