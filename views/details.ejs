@@ -65,9 +65,10 @@
           <div class="viewactivity"> <%= events.activity%> </div>
           <%- thumbs[events.activity] %> 
         </div>
+
         <div class="viewname">  Activity by <%= events.name%> </div>
 
-<!-- <div class="viewactivity">  Kp7, kiit campus, bhubaneswar </div> -->
+
         <div class="viewr2">
           <div class="viewsdt">
             <div class="viewdthead">Begins</div>  
@@ -80,18 +81,24 @@
           </div>
 
         </div>
-<div class="viewr3">
-  <div class="viewdeschead">
-    Address
+      <div class="viewr3">
+    <div class="viewhead">
+      Address
+    </div>
+    <div class="viewaddr">  <%= address %> </div><br>
   </div>
-  <div class="viewdesc">  <%= address %> </div><br>
-  <div class="viewdeschead">
-    Description
+  <div class="viewr4">
+    <div class="viewhead">
+      Description
+    </div>
+    <div class="viewdesc">  <%= events.description%> </div>
   </div>
-  <div class="viewdesc">  <%= events.description%> </div>
-</div>
+
+
+
+
 <div class="viewpeeps"> <b><%= events.going%></b> People are going  with <%= events.name%> </div>
-<div class="viewr4">
+<div class="viewr5">
 <button class="fgoing btn btn-outline-success"> Going </button>
 <button class="fmightgo btn btn-outline-warning"> Interested </button>
 

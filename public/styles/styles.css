@@ -87,24 +87,69 @@ line-height: 1.1em;
 margin-top: 5vh;
 }
 
-.homecta a:link {
-    text-decoration: inherit;
-    color:inherit;
-    cursor: pointer;
+.scroll-down div
+{
+    font-family: ubuntu,sans-serif;
+    color: white;
 
 }
-.homectalinks{
-
-    color:rgba(0, 0, 0, 0)!important;
-    cursor: pointer;
+.scrollcont
+{
+    display: flex;
+    align-items: center;
+    vertical-align: baseline;
+    justify-content: center;
+    z-index: -1;
+    height: 100vh;
 
 }
+.scroll-down.mouse {
+    height: 100px;
+    margin-top: auto;
+    /* position: fixed; */
+    /* width: 100%;
+    margin: auto auto 0 auto; */
 
-.homecta a:visited {
-    text-decoration: none;
-    color:white;
-    cursor: auto;
-}
+  }
+  .scroll-down.mouse span {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 60px;
+    /* left: 48vw;
+    top: 83vh; */
+    border: 2px solid #fff;
+    border-radius: 50px;
+  }
+  .scroll-down.mouse.effect2 span::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 2px;
+    height: 20px;
+    border-radius: 2px;
+    background: #fff;
+    animation: animateMouseScrollBar 1.5s infinite linear;
+  }
+  @keyframes animateMouseScrollBar {
+    0% {
+      height: 20px;
+      top: 10px;
+    }
+    50% {
+      height: 0;
+      top: 30px;
+    }
+    50.01% {
+      top: 10px;
+    }
+    100%{
+      height: 20px;
+    }
+  }
 
 @media screen and (max-width: 991px) {
     /* bug at wid=991 */

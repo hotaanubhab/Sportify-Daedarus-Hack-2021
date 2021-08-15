@@ -88,22 +88,32 @@
         <div class="boxtext bigtext">
           What are you waiting for?
         </div>
-        <a class="homectalinks"href="#">
-        <button class=" homecta btn btn-outline-light">
-          Login
+
+        <% if(user) { %>
+     
+
+          <% } else { %>
+          <button id=" homecta"class=" homecta btn btn-outline-light login" onclick="location.assign('/login')"> 
+            Login
+          </button>
+          <% } %>
+
+        <button class=" homecta btn btn-outline-light" onclick="location.assign('/event')">
+         Start Activty 
         </button>
-      </a> 
+
       <a class="homectalinks"href="#">
-        <button class=" homecta btn btn-outline-light">
-         Start Group 
-        </button>
-      </a>
-      <a class="homectalinks"href="#">
-        <button class=" homecta btn btn-outline-light">
-         Find Group 
+        <button class=" homecta btn btn-outline-light" onclick="location.assign('/find')">
+         Find Activity
         </button>
       </a>
     </div>
+    <div class="scrollcont">
+    <div  class="scroll-down mouse effect2">
+      <div>Scroll</div> 
+      <span></span>
+    </div>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
