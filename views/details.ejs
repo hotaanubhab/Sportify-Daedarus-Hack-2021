@@ -99,8 +99,24 @@
 
 <div class="viewpeeps"> <b><%= events.going%></b> People are going  with <%= events.name%> </div>
 <div class="viewr5">
-<button class="fgoing btn btn-outline-success"> Going </button>
+<button class="fgoing btn btn-outline-success" onclick="setgoing()"> Going </button>
 <button class="fmightgo btn btn-outline-warning"> Interested </button>
+<script >
+  async function setgoing() {
+    var event = "<%= events._id%>"
+    var email = "<%= user.email%>";
+    const res = await fetch('/add-going',{
+            method: 'POST', 
+            body: JSON.stringify({ event, email }),
+            headers: {'Content-Type': 'application/json'}
+          });
+          const data = await res.json();
+          if(data.event)
+          {
+            location.reload();
+          }
+  }
+</script>
 
 </div>
 
