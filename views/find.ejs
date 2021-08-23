@@ -43,6 +43,7 @@
         <% if(user) { %>
           <div class="logout">
           Hello, <%= user.email %>
+          <p class="navfix"></p>
           <button class="btn btn-outline-light" onclick="location.assign('/logout')">
             Logout
           </button>
@@ -59,7 +60,9 @@
     
 
 <div class="mapwindow">
+  <div id="map"></div>
     <div class="mapfilter">
+      <div class="filterinnercont">
         <input id="searchInput" class="controls form-control" type="text" placeholder="Enter a location">
         <input type="text" name="datetimes" id="datepicker" class="datepicker form-control" placeholder="Select date range" autocomplete="off"/>
 
@@ -75,9 +78,12 @@
           <option value="Running">Running</option>
           <option value="Workout">Workout</option>
       </select>
+      <div class="applybtncont">
       <button type="button" class="btn btn-outline-light applybtn" onclick="filter()">Apply</button>
+      </div>
     </div>
-    <div id="map"></div>
+    </div>
+    
     <script>
       async function filter(){
         const activity  = document.getElementById('Activity').value;

@@ -43,6 +43,10 @@ a.nostyle:visited {
 {
     margin-right: 10px;
 }
+.navfix
+{
+    display: none;
+}
 .navbar-brand img{
     height: 40px;
     width: 50px;
@@ -67,4 +71,12 @@ a.nostyle:visited {
     {
         background-color:rgb(49, 11, 110) ;
     }
+    .navfix
+    {
+        display: block;
+    }
+    .logout .btn
+{
+    margin-left: 0px;
+}
   }

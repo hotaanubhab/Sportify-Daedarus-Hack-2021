@@ -27,12 +27,14 @@ body{
 {
     height: 100%;
     width: 70vw;
+    order: 2;
 }
 .mapfilter
 {
     height: 100%;
     width: 30vw;
     background-color: rgba(135, 24, 179, 0.466);
+    order: 1;
 }
 
 .gm-svpc
@@ -62,8 +64,48 @@ width: 80%;
 width: 80%;
 }
 
-/* .evsubmit
+
+@media screen and (max-width: 740px) {
+
+  .mapwindow
+  {
+     padding-top: 10vh;
+      width: 100vw;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  #map 
+  {
+      height: 70vh;
+      width: 100vw;
+      order: 1;
+
+  }
+  .mapfilter
+  {
+      height: fit-content;
+      padding-bottom: 30px;
+      width: 100vw;
+      background-color: rgba(135, 24, 179, 0.466);
+      float: inline-end;
+      order: 2;
+  }
+  .applybtncont
 {
-  width: 50%;
-  margin-top: 10px;
-} */
+  display: flex;
+  justify-content: center;
+}
+  .applybtn
+  {
+    margin: 20px 0 0 0;
+    width: 40vw;
+  }
+  .findcont{
+    margin-top: 20px;
+  }
+.findcard{
+  margin: 20px 5% 20px 5%;
+}
+}

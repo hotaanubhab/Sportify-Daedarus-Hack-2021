@@ -42,6 +42,7 @@
         <% if(user) { %>
           <div class="logout">
           Hello, <%= user.email %>
+          <p class="navfix"></p>
           <button class="btn btn-outline-light" onclick="location.assign('/logout')">
             Logout
           </button>
@@ -58,7 +59,9 @@
     
 
 <div class="mapwindow">
+    <div id="map"></div>
     <div class="mapform mapfilter">
+      <div class="mapinnercont">
         <input id="searchInput" class="controls form-control" type="text" placeholder="Search location">
         <form action="/add-event" method="post">
         <input type="datetime-local" name="start" id="datepicker"class="datepicker form-control"/>
@@ -86,8 +89,9 @@
         <!-- <img src="./icons/cricket.svg" alt="">  -->
         <!-- <span class="material-icons">sports_cricket</span> -->
           <!-- <img src="./icons/cricket.svg" alt=""> -->
-    </div>
-    <div id="map"></div>
+        </div>
+        </div>
+    
     
 
 
