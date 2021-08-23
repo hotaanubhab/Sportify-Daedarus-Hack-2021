@@ -8,7 +8,7 @@ html
 body{
     margin-top: 0;
     margin-left: 0;
-    background-image:linear-gradient(180deg, rgba(22,10,71,1) 0%, rgba(96,4,122,1) 100%);
+    background-image:linear-gradient(180deg, rgba(22,10,71,1) 100%, rgba(96,4,122,1) 100%);
     height: 90vh;
     font-family: 'Ubuntu', sans-serif;
     font-family: 'Bebas Neue';
@@ -29,16 +29,18 @@ body{
 {
     height: 80%;
     width: 40vw;
+    order: 2;
 }
 .ldetails
 {
     height: fit-content;
     width: 50vw;
-    background-color: rgba(135, 24, 179, 0.274);
+    background-color: rgba(135, 24, 179, 0.466);
     padding-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
     color: white;
     padding: 20px;
+    order: 1;
 }
 .gm-svpc
 {
@@ -118,3 +120,38 @@ margin: auto 10px auto auto;
 {
   font-size: 1.8em;
 }
+
+@media screen and (max-width: 740px) {
+  body {
+    background-image:linear-gradient(180deg, rgba(22,10,71,1) 100%, rgba(96,4,122,1) 100%);
+  }
+
+  .detailscont
+  {
+     /* padding-top: 9vh; */
+      width: 100vw;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  #map 
+  {
+      height: 70vh;
+      width: 100vw;
+      order: 1;
+
+  }
+
+  .ldetails
+{
+    height: fit-content;
+    width: 100vw;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    padding: 20px;
+    order: 1;
+}
+
+  }
